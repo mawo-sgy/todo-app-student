@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZenScholar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable manual dark mode toggling
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              sage: {
+                50: '#f7f9fc',
+                100: '#eef2f6',
+                200: '#dbe2eb',
+                500: '#64748b',
+                600: '#475569',
+              },
+              // Removed custom 'dark' colors in favor of standard slate-900/slate-800
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f7f9fc;
+        color: #1e293b;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      /* Dark mode body override */
+      .dark body {
+        background-color: #0f172a; /* Slate 900 */
+        color: #f8f9fa;
+      }
+
+      /* Custom Blue Gradient - Darker Royal Blue */
+      .bg-blue-gradient {
+        background: linear-gradient(135deg, #2563eb, #3b82f6); /* Blue 600 to Blue 500 */
+      }
+      /* Darker gradient specifically for dark mode elements if needed, though the above works well now */
+
+      .text-blue-gradient {
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Custom scrollbar for chat */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      /* Animation for tasks */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.36.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
